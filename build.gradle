@@ -1,0 +1,76 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+project.with {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+subprojects {
+
+    apply plugin: 'maven'
+
+    group = 'org.ametiste'
+    version = '0.1.0-SNAPSHOT'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    task sourcesJar(type: Jar, dependsOn:classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn:javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    configurations {
+        deployerJars
+    }
+
+    artifacts {
+        archives sourcesJar
+        archives javadocJar
+    }
+
+    install {
+        repositories.mavenInstaller {
+            configuration = configurations.deployerJars
+            pom.project {
+                parent {
+                    groupId 'org.springframework.boot'
+                    artifactId 'spring-boot-starter-parent'
+                    version "1.2.3.RELEASE"
+                }
+            }
+        }
+    }
+
+    uploadArchives {
+        repositories.mavenDeployer {
+            configuration = configurations.deployerJars
+            pom.project {
+                parent {
+                    groupId 'org.springframework.boot'
+                    artifactId 'spring-boot-starter-parent'
+                    version "1.2.3.RELEASE"
+                }
+            }
+        }
+    }
+
+    ext {
+        springVersion = "4.1.6.RELEASE"
+        bootVersion="1.2.3.RELEASE"
+        servletApiVersion="3.0.1"
+    }
+
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
+}
