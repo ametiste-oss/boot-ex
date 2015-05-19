@@ -10,20 +10,20 @@ import java.util.Map;
 
 /**
  * <p>
- *     Enables {@link SmartCORSFilter}, filter object can be configured using
- *     properties defined by the {@link SmartCORSFilterProperties} class.
+ * Enables {@link SmartCORSFilter}, filter object can be configured using
+ * properties defined by the {@link SmartCORSFilterProperties} class.
  * </p>
- *
  * <p>
- *     With the default configuration, {@code SmartCORSFilter} would apply next headers:
- *
- *     <el>
- *         <li>Access-Control-Allow-Origin : *</li>
- *         <li>Access-Control-Allow-Methods : POST, GET, OPTIONS, DELETE</li>
- *         <li>Access-Control-Max-Age : 3600</li>
- *         <li>Access-Control-Allow-Headers : x-requested-with, content-type, user-agent</li>
- *     </el>
- *
+ * <p>
+ * With the default configuration, {@code SmartCORSFilter} would apply next headers:
+ * <p>
+ * <el>
+ * <li>Access-Control-Allow-Origin : *</li>
+ * <li>Access-Control-Allow-Methods : POST, GET, OPTIONS, DELETE</li>
+ * <li>Access-Control-Max-Age : 3600</li>
+ * <li>Access-Control-Allow-Headers : x-requested-with, content-type, user-agent</li>
+ * </el>
+ * <p>
  * </p>
  *
  * @see SmartCORSFilterProperties

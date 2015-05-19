@@ -24,16 +24,18 @@ public class SmartCORSFilter implements Filter {
         this.headers = headers;
     }
 
-	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
-			ServletException {
-		HttpServletResponse response = (HttpServletResponse) res;
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
+            ServletException {
+        HttpServletResponse response = (HttpServletResponse) res;
         headers.forEach(response::addHeader);
         chain.doFilter(req, res);
-	}
+    }
 
-	public void init(FilterConfig filterConfig) {}
+    public void init(FilterConfig filterConfig) {
+    }
 
-	public void destroy() {}
+    public void destroy() {
+    }
 
     private static boolean accessControlHeader(String headerName) {
         return headerName.toLowerCase().startsWith(ACCESS_CONTROL_HEADER_PREFIX);
@@ -41,10 +43,10 @@ public class SmartCORSFilter implements Filter {
 
     /**
      * <p>
-     *      Checks is there are only allowed <i>cors</i> headres.
+     * Checks is there are only allowed <i>cors</i> headres.
      * </p>
      * <p>
-     *      Note, this method allows to use empty header names set.
+     * Note, this method allows to use empty header names set.
      * </p>
      */
     private static boolean corsHeaders(Map<String, String> headers) {

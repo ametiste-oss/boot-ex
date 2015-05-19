@@ -13,7 +13,6 @@ import java.lang.annotation.*;
  * @see SmartCORSFilter
  * @see SmartCORSFilterConfiguration
  * @see SmartCORSFilterProperties
- *
  * @since 0.1.0
  */
 @Target(ElementType.TYPE)
