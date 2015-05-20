@@ -6,6 +6,10 @@ used to improve dev-experience in a development environment as well as in a prod
 Project structure is designed to be modular, each module is designed to provide the one function or a tool. 
 So, if a developer wants to use something cool, there are no need to depend on a bunch of other stuff.
 
+# Modules
+
+* [SmartCORSFilter](https://github.com/ametiste-oss/boot-ex/tree/master/boot-ex-smart-cors#introduction "Ametiste-Boot-Ex::SmartCORSFilter")
+
 # News
 
 We are working on porting boot-ex library to oss format. Stay tuned.
