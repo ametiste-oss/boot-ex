@@ -26,7 +26,12 @@ publishing {
                 parentNode.appendNode('version',"${bootVersion}")
             }
             from components.java
+
+            artifact sourcesJar {
+                classifier "sources"
+            }
         }
+
     }
 }
 
