@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'maven'
 
 project.with {
     sourceCompatibility = '1.8'
@@ -7,8 +6,6 @@ project.with {
 }
 
 subprojects {
-
-    apply plugin: 'maven'
 
     group = 'org.ametiste'
     version = '0.1.1-SNAPSHOT'
@@ -26,41 +23,6 @@ subprojects {
     task javadocJar(type: Jar, dependsOn:javadoc) {
         classifier = 'javadoc'
         from javadoc.destinationDir
-    }
-
-    configurations {
-        deployerJars
-    }
-
-    artifacts {
-        archives sourcesJar
-        archives javadocJar
-    }
-
-    install {
-        repositories.mavenInstaller {
-            configuration = configurations.deployerJars
-            pom.project {
-                parent {
-                    groupId 'org.springframework.boot'
-                    artifactId 'spring-boot-starter-parent'
-                    version "1.2.3.RELEASE"
-                }
-            }
-        }
-    }
-
-    uploadArchives {
-        repositories.mavenDeployer {
-            configuration = configurations.deployerJars
-            pom.project {
-                parent {
-                    groupId 'org.springframework.boot'
-                    artifactId 'spring-boot-starter-parent'
-                    version "1.2.3.RELEASE"
-                }
-            }
-        }
     }
 
     ext {
