@@ -1,4 +1,6 @@
-package org.ametiste.bootex.linkcenter;
+package org.ametiste.bootex.linkcenter.hosts;
+
+import org.ametiste.bootex.linkcenter.HostResolver;
 
 /**
  *

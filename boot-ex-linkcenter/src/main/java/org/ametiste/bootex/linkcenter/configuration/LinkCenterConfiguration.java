@@ -1,6 +1,6 @@
 package org.ametiste.bootex.linkcenter.configuration;
 
-import org.ametiste.bootex.linkcenter.DirectHostResolver;
+import org.ametiste.bootex.linkcenter.hosts.DirectHostResolver;
 import org.ametiste.bootex.linkcenter.LinkCenter;
 import org.ametiste.bootex.linkcenter.mvc.SpringMVCMappingControllerScaner;
 import org.ametiste.bootex.linkcenter.mvc.SpringMVCURIBuilder;
