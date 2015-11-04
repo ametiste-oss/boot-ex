@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${bootVersion}")
+        classpath('org.springframework.build.gradle:propdeps-plugin:0.0.6')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'propdeps'
+apply plugin: 'maven-publish'
+
+compileJava.dependsOn(processResources)
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom.withXml {
+                def parentNode = asNode().appendNode('parent')
+                parentNode.appendNode('groupId','org.springframework.boot')
+                parentNode.appendNode('artifactId','spring-boot-starter-parent')
+                parentNode.appendNode('version',"${bootVersion}")
+            }
+            from components.java
+
+            artifact sourcesJar {
+                classifier "sources"
+            }
+        }
+
+    }
+}
+
+dependencies {
+
+    compile("org.springframework:spring-context:${springVersion}")
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+
+    optional ("org.springframework.boot:spring-boot-configuration-processor")
+
+    compile("javax.servlet:javax.servlet-api:${servletApiVersion}")
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
