@@ -1,3 +1,4 @@
 include 'boot-ex-smart-cors'
 include 'boot-ex-linkcenter'
+include 'boot-ex-prog-props'
 
