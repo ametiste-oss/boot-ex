@@ -4,7 +4,6 @@ buildscript {
         maven { url 'http://repo.spring.io/plugins-release' }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${bootVersion}")
         classpath('org.springframework.build.gradle:propdeps-plugin:0.0.6')
     }
 }
@@ -17,7 +16,6 @@ apply from: "https://raw.githubusercontent.com/ametiste-oss/ametiste-bintray-gra
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
-apply plugin: 'spring-boot'
 apply plugin: 'propdeps'
 
 compileJava.dependsOn(processResources)
@@ -38,8 +36,9 @@ dependencies {
 
     compile "org.ametiste.util:o-trace:${ametisteUtilsVersion}"
     compile "org.springframework:spring-webmvc:${springVersion}"
-    compile "org.springframework.boot:spring-boot-autoconfigure"
-    optional "org.springframework.boot:spring-boot-configuration-processor"
+    compile "org.springframework.boot:spring-boot:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
+    optional "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

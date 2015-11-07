@@ -17,9 +17,8 @@ subprojects {
 
     ext {
         springVersion = "4.1.6.RELEASE"
-        bootVersion="1.2.3.RELEASE"
+        springBootVersion="1.2.5.RELEASE"
         servletApiVersion="3.0.1"
-
         bintray_vcsUrl = 'https://github.com/ametiste-oss/ametiste-metrics.git'
     }
 
