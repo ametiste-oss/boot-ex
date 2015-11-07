@@ -9,6 +9,12 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.jfrog.bintray" version "1.3.1"
+}
+
+apply from: "https://raw.githubusercontent.com/ametiste-oss/ametiste-bintray-gradle/master/bintray.gradle"
+
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 apply plugin: 'spring-boot'
@@ -21,27 +27,6 @@ sourceCompatibility = 1.8
 repositories {
     mavenLocal()
     mavenCentral()
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            pom.withXml {
-                def parentNode = asNode().appendNode('parent')
-                parentNode.appendNode('groupId','org.springframework.boot')
-                parentNode.appendNode('artifactId','spring-boot-starter-parent')
-                parentNode.appendNode('version',"${bootVersion}")
-            }
-            artifact sourcesJar {
-                classifier "sources"
-            }
-            artifact javadocJar {
-                classifier "javadoc"
-            }
-        }
-
-    }
 }
 
 ext {
