@@ -1,8 +1,8 @@
 package org.ametiste.bootex.linkcenter.mvc;
 
 import org.ametiste.bootex.linkcenter.ControllerScaner;
-import org.amtetiste.uttil.object.trace.CallsTraceScaner;
-import org.amtetiste.uttil.object.trace.Trace;
+import org.ametiste.lang.object.trace.CallsTraceScaner;
+import org.ametiste.lang.object.trace.Trace;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RestController;

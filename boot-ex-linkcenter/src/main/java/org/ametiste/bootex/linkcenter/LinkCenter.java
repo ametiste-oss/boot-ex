@@ -1,6 +1,6 @@
 package org.ametiste.bootex.linkcenter;
 
-import org.amtetiste.uttil.object.trace.Trace;
+import org.ametiste.lang.object.trace.Trace;
 
 import java.util.function.Consumer;
 

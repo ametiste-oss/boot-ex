@@ -25,16 +25,16 @@ sourceCompatibility = 1.8
 repositories {
     mavenLocal()
     mavenCentral()
+    jcenter()
 }
 
 ext {
     springVersion = "4.1.6.RELEASE"
-    ametisteUtilsVersion = "0.1.0-SNAPSHOT"
+    ametisteLangVersion = "0.1.0-RELEASE"
 }
 
 dependencies {
-
-    compile "org.ametiste.util:o-trace:${ametisteUtilsVersion}"
+    compile "org.ametiste.lang:lang-o-trace:${ametisteLangVersion}"
     compile "org.springframework:spring-webmvc:${springVersion}"
     compile "org.springframework.boot:spring-boot:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
