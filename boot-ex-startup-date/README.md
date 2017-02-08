@@ -24,6 +24,10 @@ To add module to your project using _gradle_:
             compile "org.ametiste:boot-ex-startup-date:0.2.0-RELEASE"
         }
 
+## Restrictions
+ 
+- Spring Boot - v1.4.0 or later 
+
 # Usage
 
 Module is a Spring Boot starter and provides auto-configuration code that automatically adds _StartupDateInfoContributor_ 
